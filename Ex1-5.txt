@@ -1,0 +1,7 @@
+With applicative-order evaluation, the interpreter will attempt to evaluate (p) before calling the test procedure, causing an endless loop.
+
+With normal-order evaluation, the expression will be expanded to
+
+(if (= 0 0) 0 (p))
+
+which evaluates to 0 without trying to evaluate (p).

@@ -1,0 +1,1 @@
+The if expression evaluates to an operator: + if b is positive, - if b is negative. Thus the procedure returns a+b or a-b as appropriate, which is equivalent to a + |b|.
