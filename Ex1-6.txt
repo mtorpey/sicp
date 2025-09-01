@@ -1,0 +1,5 @@
+new-if is a procedure, and under applicative-order evaluation, all arguments to
+a procedure are evaluated before the procedure is applied. This means that the
+iterative call to sqrt-iter is always evaluated even if the guess satisfies
+good-enough, so the recursion does not end. if is a special form which does not
+evaluate its arguments unless necessary.
