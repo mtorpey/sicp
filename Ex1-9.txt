@@ -1,0 +1,15 @@
+The first process is recursive, since none of the inc calls can be evaluated
+until the base case (= a 0) is satisfied. (+ 4 5) expands to
+
+(inc (inc (inc (inc (+ 0 5)))))
+
+The second process is iterative, since the + expression is rewritten directly
+to another + expression with arguments that can be evaluated immediately. The
+expression (+ 4 5) evaluates in the following chain:
+
+(+ 4 5)
+(+ 3 6)
+(+ 2 7)
+(+ 1 8)
+(+ 0 9)
+9
