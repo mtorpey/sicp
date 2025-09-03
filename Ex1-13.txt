@@ -1,0 +1,34 @@
+Fib(n) is the closest integer to φ^n / √5.
+
+Proof:
+
+First, observe that
+φ+1 = (1+√5)/2 + 1 = (3+√5)/2 = φ^2
+and
+ψ+1 = (1+√5)/2 + 1 = (3+√5)/2 = ψ^2.
+
+First we prove Fib(n) = (φ^n - ψ^n)/√5 starting with two base cases.
+
+If n=0, Fib(n)=0 and (φ^n - ψ^n)/√5 = (1-1)/√5 = 0, as required.
+
+If n=1, Fib(n)=1 and (φ^n - ψ^n)/√5 = ((1+√5)-(1-√5))/2√5 = 1, as required.
+
+Next we apply an induction on n. Assume that
+Fib(n-1)=(φ^(n-1) - ψ^(n-1))/√5
+and
+Fib(n-2)=(φ^(n-2) - ψ^(n-2))/√5.
+This gives us
+Fib(n) = Fib(n-1) + Fib(n-2)
+       = (φ^(n-1) - ψ^(n-1))/√5 + (φ^(n-2) - ψ^(n-2)) / √5
+       = (φ^(n-1) - ψ^(n-1) + φ^(n-2) - ψ^(n-2)) / √5
+       = ((φ+1)φ^(n-2) - (ψ+1)ψ^(n-1)) / √5
+       = (φ^2 φ^(n-2) - ψ^2 ψ^(n-1)) / √5
+       = (φ^n - ψ^n) / √5.
+
+Hence we have Fib(n) = φ^n /√5 - ψ^n /√5 for all n.
+
+Since ψ = (1-√5)/2 = -0.62, we know that |ψ^n| ≤ 1 for all n,
+and so |ψ^n /√5| < ½ for all n.
+
+This means that Fib(n) always differs from φ^n /√5 by less than ½, giving the
+result we want.
