@@ -1,0 +1,15 @@
+The evaluation proceeds as follows:
+
+sine 12.15
+p sine 4.05
+p p sine 1.35
+p p p sine 0.45
+p p p p sine 0.14
+p p p p p sine 0.05
+p p p p p 0.05
+
+The procedure p is applied 5 times.
+
+The process develops into a linear chain of calls to p, with the argument to
+sine dividing by 3 each time. The argument reaches 0.1 in around log₃(10a) calls
+to sine, giving Θ(log n) space and steps.
