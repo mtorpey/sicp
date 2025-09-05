@@ -1,0 +1,49 @@
+Normal-order evaluation: "fully expand and then reduce"
+
+gcd 206 40
+gcd 40 (remainder 206 40)
+  ; b (remainder 206 40) evaluated to 6 in if expression
+gcd 6 (remainder 40 6)
+  ; b (remainder 40 6) evaluated to 4 in if expression
+gcd 4 (remainder 6 4)
+  ; b (remainder 6 4) evaluated to 2 in if expression
+gcd 2 (remainder 4 2)
+  ; b (remainder 4 2) evaluated to 0 in if expression
+2
+
+This is all a bit unclear to me. When 'if (= b 0)' is reached, even in
+normal-order evaluation it's supposed to be evaluated before one of the two
+branches is explored. But would this mean that b is now known and can be used in
+other places? If so, it seems like this is the same as applicative-order. If
+not, so it's really dumb and cannot reuse the computed value of b, we get:
+
+gcd 206 40
+gcd 40 (remainder 206 40)
+  ; (remainder 206 40) evaluated to 6 in if expression
+gcd (remainder 206 40) (remainder 40 (remainder 206 40))
+  ; (remainder 206 40) evaluated to 6 in if expression
+  ; (remainder 40 6) evaluated to 4 in if expression
+gcd (remainder 40 (remainder 206 40)) (remainder (remainder 206 40) (remainder 40 (remainder 206 40)))
+  ; (= b 0) requires 4 uses of remainder (evaluates to 2)
+gcd (remainder (remainder 206 40) (remainder 40 (remainder 206 40))) (remainder (remainder 40 (remainder 206 40)) (remainder (remainder 206 40) (remainder 40 (remainder 206 40))))
+  ; (= b 0) requires 7 uses of remainder (evaluates to 0)
+2
+
+This is a total of 14 uses of remainder.
+
+
+
+Applicative-order evaluation: "evaluate the arguments and then apply"
+
+gcd 206 40
+gcd 40 (remainder 206 40)
+gcd 40 6
+gcd 6 (remainder 40 6)
+gcd 6 4
+gcd 4 (remainder 6 4)
+gcd 4 2
+gcd 2 (remainder 4 2)
+gcd 2 0
+2
+
+4 calls to remainder.
