@@ -1,0 +1,10 @@
+Alyssa's proposed algorithm is shorter to wrote and should work. However, the
+intermediate values would get extremely large in comparison. Note that
+
+    (fast-expt base exp)
+
+is likely to go through Θ(log exp) steps, each one handling numbers anywhere up
+to base^exp. If the numbers are integers, we get very large numbers which take a
+long time to process; and if they're floating point numbers we risk losing
+precision. The expmod algorithm from the textbook reduces them modulo m at every
+stage, so we never have to deal with numbers much bigger than m.

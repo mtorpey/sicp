@@ -1,0 +1,19 @@
+Louis's procedure contains the expression
+
+    (* (expmod base (/ exp 2) m)
+       (expmod base (/ exp 2) m))
+
+which calls (expmod base (/ exp 2) m) twice, whereas
+
+    (square (expmod base (/ exp 2) m))
+
+calls it once and multiplies the answer by itself. If this only caused the
+overall amount of work to be doubled, that wouldn't be so bad. But because the
+expression actually calls expmod itself, this splitting may happen again in each
+of the branches, and again in each of their sub-branches and so on. In fact,
+this mistake turns the process from a linear-recursive to a tree-recursive
+process.
+
+The correct version is Θ(log n) because the problem size halves every time we
+manage to divide exp by 2. Louis's version is Θ(n) because every time the size
+halves we perform the procedure twice, saving no steps at all over linear.

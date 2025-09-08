@@ -5,9 +5,11 @@
 (define (smallest-divisor n) (find-divisor n 2))
 
 (define (find-divisor n test-divisor)
+  (define (next m)
+    (if (= m 2) 3 (+ m 2)))
   (cond ((> (square test-divisor) n) n)
         ((divides? test-divisor n) test-divisor)
-        (else (find-divisor n (+ test-divisor 1)))))
+        (else (find-divisor n (next test-divisor)))))
 
 (define (divides? a b) (= (remainder b a) 0))
 
@@ -44,20 +46,32 @@
 (search-for-primes (+ (expt 10 14) 1) 2 3)
 (search-for-primes (+ (expt 10 15) 1) 2 3)
 
-;; Output looks like this:
+;; Output of original
 ;;   1000000000039 *** 18
-;;   1000000000061 *** 23
-;;   1000000000063 *** 22
-;;   10000000000037 *** 60
-;;   10000000000051 *** 61
-;;   10000000000099 *** 54
-;;   100000000000031 *** 177
+;;   1000000000061 *** 24
+;;   1000000000063 *** 25
+;;   10000000000037 *** 70
+;;   10000000000051 *** 66
+;;   10000000000099 *** 53
+;;   100000000000031 *** 182
 ;;   100000000000067 *** 175
-;;   100000000000097 *** 168
-;;   1000000000000037 *** 918
-;;   1000000000000091 *** 667
-;;   1000000000000159 *** 531
+;;   100000000000097 *** 174
+;;   1000000000000037 *** 549
+;;   1000000000000091 *** 561
+;;   1000000000000159 *** 563
 
-;; The averages are 21, 58, 173, 705.
-;; So multiplying n by 10 increases time by 2.8 or 3.0 or 4.1,
-;; where sqrt(10) is 3.16, which isn't far off.
+;; Output of new version
+;;   1000000000039 *** 9
+;;   1000000000061 *** 15
+;;   1000000000063 *** 16
+;;   10000000000037 *** 38
+;;   10000000000051 *** 39
+;;   10000000000099 *** 27
+;;   100000000000031 *** 95
+;;   100000000000067 *** 87
+;;   100000000000097 *** 87
+;;   1000000000000037 *** 283
+;;   1000000000000091 *** 281
+;;   1000000000000159 *** 275
+
+;; Findings: the time is very close to halved, which is what we'd expect.
