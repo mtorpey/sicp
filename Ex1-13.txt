@@ -21,14 +21,14 @@ This gives us
 Fib(n) = Fib(n−1) + Fib(n−2)
        = (φⁿ⁻¹ − ψⁿ⁻¹)/√5 + (φⁿ⁻² − ψⁿ⁻²) / √5
        = (φⁿ⁻¹ − ψⁿ⁻¹ + φⁿ⁻² − ψⁿ⁻²) / √5
-       = ((φ+1)φⁿ⁻² − (ψ+1)ψⁿ⁻¹) / √5
-       = (φ² φⁿ⁻² − ψ² ψⁿ⁻¹) / √5
+       = ((φ+1)φⁿ⁻² − (ψ+1)ψⁿ⁻²) / √5
+       = (φ² φⁿ⁻² − ψ² ψⁿ⁻²) / √5
        = (φⁿ − ψⁿ) / √5.
 
-Hence we have Fib(n) = φⁿ /√5 − ψⁿ /√5 for all n.
+Hence we have Fib(n) = φⁿ/√5 − ψⁿ/√5 for all n.
 
 Since ψ = (1−√5)/2 = −0.62, we know that |ψⁿ| ≤ 1 for all n,
-and so |ψⁿ /√5| < ½ for all n.
+and so |ψⁿ/√5| < ½ for all n.
 
-This means that Fib(n) always differs from φⁿ /√5 by less than ½, giving the
+This means that Fib(n) always differs from φⁿ/√5 by less than ½, giving the
 result we want.
