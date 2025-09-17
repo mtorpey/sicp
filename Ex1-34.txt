@@ -1,0 +1,9 @@
+The interpreter would complain that it cannot call an integer as a procedure.
+
+This is because the expression is expanded as follows:
+
+  (f f)
+  (f 2)
+  (2 2)
+
+and (2 2) isn't a valid procedure call.
