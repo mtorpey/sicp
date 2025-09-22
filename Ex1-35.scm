@@ -36,8 +36,8 @@
 
 ;; This converges, but finds a negative solution at −0.62, whereas we know the
 ;; real φ is positive. The problem is the −1 in the formula, but we can avoid
-;; this by dividing φ = φ²−1 through by φ to get 1 = φ−¹⁄ᵩ, or
-;;   φ = 1 + ¹⁄ᵩ,
+;; this by dividing φ = φ²−1 through by φ to get 1 = φ − 1/φ, or
+;;   φ = 1 + 1/φ,
 ;; which means that φ is a fixed point of the function
 ;;   y ↦ 1 + 1/y,
 ;; which we'll pursue as suggested in the exercise.
