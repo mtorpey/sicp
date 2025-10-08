@@ -150,9 +150,6 @@
 ;; to the sum of the two widths of the operands. So, each time we do these
 ;; operations we add more error.
 ;;
-;; One absurd conclusion of this is that a/a has some uncertainty to it. In
-;; reality it should be precisely 1, but our algorithm 
-;;
 (define a (make-center-percent 10 0.01))
 (define b (make-center-percent 20 0.05))
 (display (list (div-interval a a) (div-interval a b)))
