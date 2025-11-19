@@ -1,0 +1,7 @@
+At each step of the iteration, an item is taken from the front of things and put
+onto the front of answer, causing them to end up in reverse order.
+
+In his second attempt Louis simply uses cons with the arguments reversed. This
+creates a left-heavy tree, whereas a list is expected to be a right-heavy tree.
+That is to say, each cell has the item's contents as its cdr, and the pointer to
+the next item as its car, which is the wrong way round for a list.

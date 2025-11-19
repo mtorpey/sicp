@@ -1,0 +1,19 @@
+(list 1 (list 2 (list 3 4)))
+
+Result from the interpreter:
+'(1 (2 (3 4)))
+
+Box-and-pointer:
+☐☐→☐☒
+↓  ↓
+1  ☐☐→☐☒
+   ↓  ↓
+   2  ☐☐→☐☒
+      ↓  ↓
+      3  4
+
+Tree:
+ /\
+1 /\
+ 2 /\
+  3  4
