@@ -1,3 +1,5 @@
+#lang sicp
+
 ;; My solutions: same as previous sum procedures but with (*,1) instead of (+,0)
 (define (product-rec term a next b)
   (if (> a b)

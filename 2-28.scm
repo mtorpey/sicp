@@ -1,3 +1,5 @@
+#lang sicp
+
 (define (fringe tree)
   (cond ((null? tree) (list))
         ((not (pair? tree)) (list tree))

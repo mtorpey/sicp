@@ -1,3 +1,5 @@
+#lang sicp
+
 (define (same-parity x . xs)
   (define (filter-by-parity parity xs)
     (if (null? xs)

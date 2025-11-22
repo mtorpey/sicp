@@ -1,3 +1,5 @@
+#lang sicp
+
 ;; Elemental operations
 (define (double x) (* x 2))
 (define (halve x) (/ x 2))

@@ -1,3 +1,5 @@
+#lang sicp
+
 ;; From book
 (define (cons x y)
   (lambda (m) (m x y)))

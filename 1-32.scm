@@ -1,3 +1,5 @@
+#lang sicp
+
 ;;
 ;; Recursive version
 ;;

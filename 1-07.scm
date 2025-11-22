@@ -1,3 +1,5 @@
+#lang sicp
+
 ;; good-enough? has a fixed tolerance of 0.001, but we may want to find the
 ;; square root of very small numbers for which 0.001 is actually a big
 ;; proportion of their value. For example, if we call sqrt on a number as small
@@ -34,6 +36,7 @@
 (define (average x y)
   (/ (+ x y) 2))
 
+(define (compose f g) (lambda (x) (f (g x))))
 (display
  (map (compose sqrt square)
       (list 0.0001 10 2 99999999999)))

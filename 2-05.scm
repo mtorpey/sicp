@@ -1,3 +1,5 @@
+#lang sicp
+
 ;;
 ;; New representation of a pair of non-negative ints by 2^a * 3^b.
 ;;

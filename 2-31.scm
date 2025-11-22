@@ -1,6 +1,8 @@
+#lang sicp
+
 ;; Primitive
 (define (tree-map proc tree)
-  (cond ((null? tree) null)
+  (cond ((null? tree) nil)
         ((pair? tree) (cons (tree-map proc (car tree))
                             (tree-map proc (cdr tree))))
         (else (proc tree))))

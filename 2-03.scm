@@ -1,3 +1,5 @@
+#lang sicp
+
 ;; Rectangles described by two corners
 (define (make-rect1 p1 p2)
   (cons p1 p2))

@@ -1,3 +1,5 @@
+#lang sicp
+
 ;; One transformation is:
 ;; a := bq + aq + ap
 ;; b := bp + aq

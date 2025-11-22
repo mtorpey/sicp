@@ -1,3 +1,8 @@
+#lang sicp
+
+;; Helper
+(define (compose f g) (lambda (x) (f (g x))))
+
 ;; 0 is represented by a function that returns the identity function, so 0 is
 ;;   f↦(x↦x)
 (define zero
@@ -41,7 +46,7 @@
 ;;   f↦(x↦fᵐ(fⁿ(x)))
 ;; i.e. a function that takes f and returns a function that applies f n times
 ;; then applies f m times
-(define (add m n)
+(define (add-bad m n)
   (lambda (f)
     (lambda (x)
       ((m f) ((n f) x)))))

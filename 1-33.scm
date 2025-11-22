@@ -1,3 +1,5 @@
+#lang sicp
+
 ;; Iterative version only
 (define (filtered-accumulate combiner null-value term a next b filter?)
   (define (iter a result)
@@ -43,7 +45,6 @@
 ;; Helpers
 (define (identity n) n)
 (define (inc n) (+ n 1))
-(define (square n) (* n n))
 
 ;; Derived procedures
 (define (sum-squares-primes a b)

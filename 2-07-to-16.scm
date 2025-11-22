@@ -1,3 +1,5 @@
+#lang sicp
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;; 2.1.4 Extended Exercise: Interval Arithmetic
@@ -74,7 +76,7 @@
 ;; Exercise 2.10
 ;; Division by zero
 ;;
-(define (div-interval x y)
+(define (div-interval-safe x y)
   (if (eq? (positive? (lower-bound y)) (positive? (upper-bound y)))
       (mul-interval
        x
@@ -93,9 +95,9 @@
 ;; giving 3 cases for each interval, 9 cases overall. The "both straddling"
 ;; case is the only one where we need to try two products and compare them.
 ;;
-(define (mul-interval x y)
+(define (mul-interval-fast x y)
   (define (pos? x) (positive? (lower-bound x)))  ; above zero
-  (define (npos? x) (not (positive (upper-bound x))))  ; below (or touching from below) zero
+  (define (npos? x) (not (positive? (upper-bound x))))  ; below (or touching from below) zero
   (let ((l1 (lower-bound x))
         (u1 (upper-bound x))
         (l2 (lower-bound y))
@@ -152,7 +154,7 @@
 ;;
 (define a (make-center-percent 10 0.01))
 (define b (make-center-percent 20 0.05))
-(display (list (div-interval a a) (div-interval a b)))
+(display (list (div-interval-safe a a) (div-interval-safe a b)))
 
 ;;
 ;; Exercise 2.15

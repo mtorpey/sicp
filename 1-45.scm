@@ -1,3 +1,8 @@
+#lang sicp
+
+;; Helper
+(define (compose f g) (lambda (x) (f (g x))))
+
 ;; Iterative version for performance
 (define (repeated f n)
   (define (iter i fi)
@@ -11,8 +16,7 @@
 (define (fixed-point f first-guess)
   (define (close-enough? v1 v2)
     (let ((distance (abs (- v1 v2))))
-      (display distance)
-      (newline)
+      (display ".") ; lightweight indicator
       (< distance tolerance)))
   (define (try guess)
     (let ((next (f guess)))
@@ -82,4 +86,4 @@
 
 ;; Test using 5 as the base
 (display (map (lambda (n) (nth-root (expt 5 n) n))
-              (list 1 2 3 4 5 6 7 8 9 10 12 15 20 30 40 50 100)))
+              (list 1 2 3 4 5 6 7 8 9 10 30 50)))

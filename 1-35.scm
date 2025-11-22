@@ -1,3 +1,5 @@
+#lang sicp
+
 ;; First we try a slightly different approach.
 ;; From §1.2.2 we know that φ is the ratio such that
 ;;   φ² = φ+1,

@@ -1,3 +1,5 @@
+#lang sicp
+
 ;; From textbook
 (define (prime? n)
   (= n (smallest-divisor n)))
@@ -15,11 +17,11 @@
 
 ;; From exercise, adapted for nicer printing
 (define (timed-prime-test n)
-  (start-prime-test n (current-milliseconds)))
+  (start-prime-test n (runtime)))
 
 (define (start-prime-test n start-time)
   (if (prime? n)
-      (report-prime n (- (current-milliseconds) start-time))
+      (report-prime n (- (runtime) start-time))
       false))
 
 (define (report-prime n elapsed-time)

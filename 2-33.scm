@@ -1,3 +1,5 @@
+#lang sicp
+
 ;; From book
 (define (accumulate op initial sequence)
   (if (null? sequence)
@@ -8,7 +10,7 @@
 ;; My solutions
 (define (map p sequence)
   (accumulate (lambda (item ptail) (cons (p item) ptail))
-              null
+              nil
               sequence))
 
 (define (append seq1 seq2)

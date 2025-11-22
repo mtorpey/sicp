@@ -1,3 +1,5 @@
+#lang sicp
+
 (define (cbrt-iter guess last-guess x)
   (if (good-enough? guess last-guess)
       guess
@@ -22,6 +24,7 @@
 (define (cbrt x)
   (cbrt-iter 1.0 2.0 x))
 
+(define (compose f g) (lambda (x) (f (g x))))
 (display
  (map (compose cbrt cube)
       (list 0.000001 2 10 999999)))

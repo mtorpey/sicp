@@ -1,12 +1,14 @@
+#lang sicp
+
 (define (square x) (* x x))
 
-(define (square-list items)
+(define (square-list1 items)
   (if (null? items)
-      null
+      nil
       (cons (square (car items))
-            (square-list (cdr items)))))
-(display (square-list (list 1 2 3 4)))
+            (square-list1 (cdr items)))))
+(display (square-list1 (list 1 2 3 4)))
 
-(define (square-list items)
+(define (square-list2 items)
   (map square items))
-(display (square-list (list 1 2 3 4)))
+(display (square-list2 (list 1 2 3 4)))

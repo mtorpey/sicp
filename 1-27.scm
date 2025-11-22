@@ -1,3 +1,5 @@
+#lang sicp
+
 ;; From textbook
 (define (expmod base exp m)
   (cond ((= exp 0) 1)

@@ -1,3 +1,5 @@
+#lang sicp
+
 ;;
 ;; Iterative version from last exercise
 ;;

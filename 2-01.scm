@@ -1,3 +1,5 @@
+#lang sicp
+
 ;; From book
 (define (gcd a b)
   (if (= b 0)

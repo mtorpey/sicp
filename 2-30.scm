@@ -1,6 +1,8 @@
+#lang sicp
+
 ;; Primitive
 (define (square-tree1 t)
-  (cond ((null? t) null)
+  (cond ((null? t) nil)
         ((pair? t) (cons (square-tree1 (car t)) (square-tree1 (cdr t))))
         (else (* t t))))
 

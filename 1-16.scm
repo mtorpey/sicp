@@ -1,3 +1,5 @@
+#lang sicp
+
 (define (fast-expt-iter b n)
   (define (eit b n value)
     (cond ((= n 0) value)

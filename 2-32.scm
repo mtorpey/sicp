@@ -1,7 +1,9 @@
+#lang sicp
+
 ;; Solution with a lambda
 (define (subsets s)
   (if (null? s)
-      (list null)
+      (list nil)
       (let ((rest (subsets (cdr s))))
         (append rest (map (lambda (xs)
                             (cons (car s) xs))
@@ -11,7 +13,7 @@
 (define (c proc arg) (lambda (arg2) (proc arg arg2)))
 (define (subsets2 s)
   (if (null? s)
-      (list null)
+      (list nil)
       (let ((rest (subsets (cdr s))))
         (append rest (map (c cons (car s)) rest)))))
 

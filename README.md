@@ -2,4 +2,8 @@ Here are solutions to some of the exercises in Structure and Interpretation of C
 
 Run a Scheme file with, for example,
 
-    racket -r Ex1-8.scm
+    racket -u 2-32.scm
+
+To run all the files in one go, call
+
+    for f in *.scm; do echo "$f"; racket -u $f; echo; echo; done

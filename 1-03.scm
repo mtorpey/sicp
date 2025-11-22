@@ -1,3 +1,5 @@
+#lang sicp
+
 (define (sum-sq x y)
   (+ (* x x) (* y y)))
 

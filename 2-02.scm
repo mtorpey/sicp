@@ -1,3 +1,5 @@
+#lang sicp
+
 ;; Line segments
 (define make-segment cons)
 (define start-segment car)

@@ -1,3 +1,5 @@
+#lang sicp
+
 ;; New cc procedure from book
 (define (cc amount coin-values)
   (cond ((= amount 0) 1)

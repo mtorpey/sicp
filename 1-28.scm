@@ -1,3 +1,5 @@
+#lang sicp
+
 ;; Returns 0 if it finds a nontrivial square root of 1 mod m,
 ;; or otherwise (base ^ exp) mod m.
 (define (expmod base exp m)

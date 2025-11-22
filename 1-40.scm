@@ -1,3 +1,5 @@
+#lang sicp
+
 ;; Newton code from book
 (define tolerance 0.00001)
 (define (fixed-point f first-guess)

@@ -1,3 +1,5 @@
+#lang sicp
+
 ;; Pascal's triangle: row n, the kth element, both indexed from 0
 (define (binomial n k)
   (cond ((or (< n 0) (< k 0) (> k n)) 0)

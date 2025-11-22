@@ -1,3 +1,5 @@
+#lang sicp
+
 (define (last-pair items)
   (if (= (length items) 1)
       (car items)
