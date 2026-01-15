@@ -1,0 +1,7 @@
+Louis's code puts the expensive part in the middle of a nested loop, instead of outside it.
+
+At the top level, we need to try B possible rows for the new queen that's being appended, and for each one we need to compare it to the result of queen-cols(k-1). Since queen-cols(k-1) is an expensive recursive operation we want to calculate it once and apply each new row to the result; instead, Louis goes through each new row and calculates queen-cols(k-1) again for each time, repeating the same calculation B times.
+
+Just looking at this top level, we find a B× slowdown, but note that the same thing happens inside each recursive call to queen-cols: the subsequent inner call is done B times. This occurs at all B levels, so the slowdown should be around B².
+
+Hence, if the procedure in Exercise 2.42 takes time T, I would expect Louis's version to take time B²T, where B is the parameter *board-size*.
